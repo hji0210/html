@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<script>
+		function add(n1, n2) {
+			return n1 + n2;
+		}
+		function minus(n1, n2) {
+			return n1 * n2;
+		}
+
+		function multiple(n1, n2) {
+			return n1 * n2;
+		}
+		function divide(n1, n2) {
+			return n1 / n2;
+		}
+
+	function calculator(d1, d2, gb) {
+
+		if (gb === "+") {
+			return add(d1, d2);
+		} else if (gb === "-") {
+			return minus(d1, d2);
+		} else if (gb === "*") {
+			return multiple(d1, d2);
+		} else if (gb === "/") {
+			return divide(d1, d2);
+		}
+
+		return "";
+	}
+
+		let d1 = 10;
+		let d2 = 20;
+		let result01 = calculator(d1, d2, "+");
+		console.log(d1 + " + " + d2 + "=" + result01);
+
+		let result02 = calculator(d1, d2, "-");
+		console.log(d1 + " - " + d2 + "=" + result02);
+
+		let result03 = calculator(d1, d2, "*");
+		console.log(d1 + " * " + d2 + "=" + result03);
+
+		let result04 = calculator(d1, d2, "/");
+		console.log(d1 + " / " + d2 + "=" + result04);
+
+	</script>
+</body>
+
+</html>

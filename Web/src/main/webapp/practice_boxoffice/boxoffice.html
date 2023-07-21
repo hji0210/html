@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+
+
+	<script>
+
+		//3자리 수마다 콤마 찍기
+
+		function numberWithCommas(x) {
+
+			return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+		}
+
+
+
+		function search() {
+
+
+
+			// ====== 검색일자(Start) ======
+
+			// - 입력받은 날짜(YYYY-MM-DD)를 전송 가능한 형태(YYYYMMDD)로 변환한다.
+
+			let boxOfficeDate;	// 검색일자(형식 : YYYYMMDD)
+
+
+
+			// 코드 작성
+
+			let val = document.getElementById("searchDate").value;
+
+			boxOfficeDate = val.replaceAll('-', '');
+			
+
+			// ====== 검색일자(End) ======
+			if(isEmpty(boxOfficeDate)) {
+				alert('날짜를 입력하세요.');
+				return false; // 더이상의 진행을 막음
+			}
+
+			$.ajax({
+
+				type: "get",
+
+				url: "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=16aa1c5a57dc77debdbe09fcb7c72591",
+
+				data: {
+					targetDt: boxOfficeDate
+				},
+				dataType: "json",
+				// 검색이 성공하였을 경우
+
+				//천재언니 방법
+				/*success : function(result) {
+		
+					let items = [];
+		
+					let resultHTML = '';
+		
+					
+		
+					items = result.boxOfficeResult.dailyBoxOfficeList;
+		
+					resultHTML = items.map(item => {//map 한줄 만들어서 뱅
+		
+						return `<tr><td>${item.rank}</td><td>${item.rankInten}</td><td>${item.rankOldAndNew}</td><td>${item.movieNm}</td><td>${item.openDt}</td><td>${item.audiCnt}</td><td>${item.audiAcc}</td><td>${item.salesAcc}</td><td>${item.scrnCnt}</td><td>${item.movieCd}</td></tr>`
+		
+					}).join('');
+		
+					
+		
+					document.getElementById("result").innerHTML = resultHTML;
+		
+				},*/
+
+				success: function (data) { // data는 성공시, api서버가 반환해준 데이터
+					
+
+					let items = [];
+					let resultHTML = ''; // 초기화
+
+					items = data.boxOfficeResult.dailyBoxOfficeList;
+					//console.log(items);
+
+					for (let i = 0; i < data.boxOfficeResult.dailyBoxOfficeList.length; i++) {
+
+						let rank = data.boxOfficeResult.dailyBoxOfficeList[i].rank;
+						let rankInten = data.boxOfficeResult.dailyBoxOfficeList[i].rankInten;
+						let rankOldAndNew = data.boxOfficeResult.dailyBoxOfficeList[i].rankOldAndNew;
+						let movieNm = data.boxOfficeResult.dailyBoxOfficeList[i].movieNm;
+						let openDt = data.boxOfficeResult.dailyBoxOfficeList[i].openDt;
+						let audiCnt = data.boxOfficeResult.dailyBoxOfficeList[i].audiCnt;
+						let audiAcc = data.boxOfficeResult.dailyBoxOfficeList[i].audiAcc;
+						let salesAcc = data.boxOfficeResult.dailyBoxOfficeList[i].salesAcc;
+						let scrnCnt = data.boxOfficeResult.dailyBoxOfficeList[i].scrnCnt;
+						let movieCd = data.boxOfficeResult.dailyBoxOfficeList[i].movieCd;
+
+						//console.log(rank + " | " + movieNm + " | " + openDt);
+						
+						let a =1;
+						a += 1; // a = 2
+						a = a + 2; // a = 4
+						a = a + 4; // a = 8-->
+
+						resultHTML = resultHTML + "<tr>";
+						resultHTML = resultHTML + "<td>" + rank + "</td>";
+						resultHTML = resultHTML + "<td>" + rankInten + "</td>";
+						resultHTML = resultHTML + "<td>" + rankOldAndNew + "</td>";
+						resultHTML = resultHTML + "<td>" + movieNm + "</td>";
+						resultHTML = resultHTML + "<td>" + openDt + "</td>";
+						resultHTML = resultHTML + "<td>" + audiCnt + "</td>";
+						resultHTML = resultHTML + "<td>" + audiAcc + "</td>";
+						resultHTML = resultHTML + "<td>" + salesAcc + "</td>";
+						resultHTML = resultHTML + "<td>" + scrnCnt + "</td>";
+						resultHTML = resultHTML + "<td>" + movieCd + "</td>";
+						resultHTML = resultHTML + "</tr>";
+						
+						resultHTML += "<tr>";
+						resultHTML += "<td>" + rank + "</td>";
+						resultHTML = resultHTML + "<td>" + rankInten + "</td>";
+						resultHTML = resultHTML + "<td>" + rankOldAndNew + "</td>";
+						resultHTML = resultHTML + "<td>" + movieNm + "</td>";
+						resultHTML = resultHTML + "<td>" + openDt + "</td>";
+						resultHTML = resultHTML + "<td>" + audiCnt + "</td>";
+						resultHTML = resultHTML + "<td>" + audiAcc + "</td>";
+						resultHTML = resultHTML + "<td>" + salesAcc + "</td>";
+						resultHTML = resultHTML + "<td>" + scrnCnt + "</td>";
+						resultHTML = resultHTML + "<td>" + movieCd + "</td>";
+						resultHTML = resultHTML + "</tr>";
+
+					}
+					if(isEmpty(data.boxOfficeResult.dailyBoxOfficeList)) {
+						resultHTML = '표시할 데이터가 없습니다.';
+					}
+					document.getElementById("result").innerHTML = resultHTML;
+
+				},
+				// 검색이 실패하였을 경우
+				error: function (xhr, status, error) {
+					console.log(error);
+				}
+
+			});
+
+		}
+		
+		function isEmpty(data) {
+			if(data == '' || data == undefined || data.length == 0) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="date" id="searchDate">
+
+	<input type="button" onclick="search()" value="박스오피스 조회">
+
+	<hr width="90%">
+
+	<div id="movieInfo">
+
+		<table>
+
+			<thead>
+
+				<tr>
+					<th>순위</th>
+					<th>증감분</th>
+					<th>신규진입</th>
+					<th>영화명</th>
+					<th>개봉일</th>
+					<th>일일관객수</th>
+					<th>누적관객수</th>
+					<th>누적매출액</th>
+					<th>스크린수</th>
+					<th>영화코드</th>
+				</tr>
+
+			</thead>
+
+			<tbody id="result">
+
+
+
+			</tbody>
+
+		</table>
+
+	</div>
+
+</body>
+
+</html>

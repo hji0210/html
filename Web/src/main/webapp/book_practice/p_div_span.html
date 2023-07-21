@@ -1,0 +1,78 @@
+<!-- 
+@@@@@ 프로그램 @@@@@
+* p, div, span의 공간을 차지하는 특징을 확인한다.
+	- p, div는 블럭 스타일로 공간을 차지한다.
+	- span은 인라인 스타일로 공간을 차지한다.
+
+
+@@@@@ display(p, div, span) @@@@@
+
+##### 정의 #####
+* p
+	- Paragraph. 단락. 
+	- 주로 문장(text)에 사용
+* div
+	- Division. 레이아웃 분할. 
+	- 주로 영역(다른 tag를 감싸는)에 사용
+* span
+	- 주로 특정 부분에 사용
+
+
+##### 차이점 : 공간 처리 #####
+* 새로운 요소를 사용할 때 새로운 줄에서 시작하느냐 아니냐에 따라 분류된다.
+	- 새로운 줄에서 시작 	: p, div
+	- 같은 줄에서 시작		: span
+
+===== black 레벨 =====
+* 한 부분을 통채로 블럭처럼 사용
+* 새로운 블럭 요소는 새로운 라인에서 시작
+* 따라서 두 블럭간 겹치는 일이 없다.
+* 사용 태그
+	- p, div
+	- ul, ol, li
+	- h1 ~ h6 ...
+	
+===== inline 레벨 =====
+* 문장 중간에 들어간다.
+* 새로운 라인에서 시작하지 않는다.
+* 요소의 너비도 내용(컨텐츠)만큼만 차지한다.
+* 사용 태그
+	- span
+	
+
+##### 차이점 : p VS div #####
+* 화면상으로 큰 차이점은 없다.	
+* p는 앞뒤로 라인이 추가된다.
+	div는 앞뒤로 라인이 추가되지 않는다.
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML</title>
+</head>
+<body>
+	<!-- p(Paragraph. 단락) -->
+	<h1>p</h1>
+	안녕하세요.
+	<p style="background-color:orange">반갑습니다. 고맙습니다.</p>
+	좋아요.
+	<hr>
+
+	<!-- div(Division. 레이아웃 분할) -->
+	<h1>div</h1>
+	안녕하세요.
+	<div style="background-color:orange">반갑습니다. 고맙습니다.</div>
+	좋아요.
+	<hr>
+
+	<!-- span(특정 부분) -->
+	<h1>span</h1>
+	안녕하세요.
+	<span style="background-color:orange">반갑습니다. 고맙습니다.</span> 
+	좋아요.
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	function imageChange(){
+		let obj = document.querySelector("#mylmg");
+		obj.src="on.jpg";
+		}
+		
+	function imageReturn(){
+	let obj = document.querySelector("#mylmg");
+		obj.src="dog.jpeg";
+		}
+		
+</script>
+<img src="dog.jpeg" id="mylmg" height="60" onmouseover="imageChange()"
+onmouseout="imageReturn()">
+</body>
+ 
+</html>

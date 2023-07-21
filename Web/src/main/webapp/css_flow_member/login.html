@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		table {
+			margin: 0 auto;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.cancel-button {
+			background-color: skyblue;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=login],
+		input[type=cancel] {
+			width: 150px;
+			/* 버튼의 너비 조정 */
+			height: 25px;
+			/* 버튼의 높이 조정 */
+			background-color: lightblue;
+			border-color: lightgrey;
+			color: black;
+			font-size: 15px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1><a>index | 회원가입 | <a href="login.html">{로그인} </a></h1>
+	<hr>
+	<table>
+		<tr>
+			<th>아이디</th>
+			<td><input type="text" id="username" name="username"></td>
+		</tr>
+		<tr>
+			<th>패스워드</th>
+			<td><input type="password" id="password" name="password"></td>
+		</tr>
+	</table>
+</body>
+
+</html>
+</table>
+<input type="login" onclick="location.href='login_result.html'" value="로그인">
+<input type="cancel" value="취소">

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("span").css({"font-weight":"bold"});
+	$("body").css({"text-align" : "center"});
+	$("#bb").click(function() {
+	 $("#ctext").css("background-color", $("#bc").val());
+	})
+$("#br").click(function() {
+	  $("#ctext").css("color", $("#tc").val());
+
+	})
+	 $("#br").click(function(){
+         $("#ctext").css({"color":"black","background-color":"white"});
+         $("#bc").val("");
+         $("#tc").val("");
+      })
+   })
+
+	
+	
+	
+		
+</script>
+</head>
+<body>
+	<h1 id="ctext">Welcome</h1>
+	<h2>
+	배경 :<input type="color" id="bc">
+    글자 :<input type="color" id="tc">
+    </h2>
+
+
+<input type="button" value="배경" id="bb">
+<input type="button" value="글자" id="bt">
+<input type="button" value="초기화" id="br">
+
+
+</body>
+</html>

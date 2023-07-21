@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.max_width {
+	/* 	
+	# 가변 길이
+		- 브라우저 가로 길이가 줄어들면 이미지가 같이 줄어든다.
+		- 브라우저 가로 길이가 이미지 크기보다 커져도 이미지는 더 이상 늘어나지 않는다. 
+	*/
+	max-width: 100%;	/* max-width : 최대 길이 */
+}
+
+.width {
+	/* 
+	# 가변길이
+		- 브라우저 가로 길이의 100% 
+	*/
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<!-- 원본. 고정길이 -->
+	<img src="solo_chewbacca.jpg">
+	<br>
+
+	<!-- 가변길이 : max-width -->
+	<img src="solo_chewbacca.jpg" class="max_width">
+
+	<!-- 가변길이 : width -->
+	<img src="solo_chewbacca.jpg" class="width">
+</body>
+</html>

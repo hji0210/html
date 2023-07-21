@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	let str1 = "Hello World Hello";
+	let str2 = "안녕하세요";
+	
+	console.log("----- length -----");	
+	// length : 문자열 길이
+	console.log(str1.length);
+	console.log(str2.length);
+	
+	console.log("\n----- charAt() | [] -----");	
+	// charAt(index) : index에 해당하는 문자 리턴
+	console.log(str1.charAt(0));
+	
+	console.log("\n----- indexOf() -----");	
+	// indexOf(문자열) : 문자열이 있는 첫번째 인덱스 리턴
+	console.log(str1.indexOf("Hello"));
+	console.log(str1.indexOf("llo"));
+	
+	console.log("\n----- lastIndexOf() -----");	
+	// lastIndexOf(문자열) : 문자열이 있는 마지막 인덱스 리턴
+	console.log(str1.lastIndexOf("Hello"));
+	
+	console.log("\n----- startsWith() -----");	
+	// startsWith(문자열) : 문자열로 시작하는지 여부 리턴
+	console.log(str1.startsWith("He"));
+	console.log(str1.startsWith("he"));
+			
+	console.log("\n----- endsWith() -----");	
+	// endsWith(문자열) : 문자열로 끝나는지 여부 리턴
+	console.log(str1.endsWith("Hello"));
+	
+	console.log("\n----- includes() -----");	
+	// includes(문자열) : 문자열이 포함되어 있는지 여부 리턴
+	console.log(str1.includes("Wor"));	
+	console.log(str1.includes("World"));
+	
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="date" id="date">
+<input type="button" onclick="printDate()" value="년월일">
+
+<script>
+function printDate() {
+	let targetDate = document.getElementById("date").value;
+	alert("년월일=" + targetDate.substring(0,4) + "." + targetDate.substring(5,7) + "." + targetDate.substring(8,10));
+}
+</script>
+
+</body>
+</html>

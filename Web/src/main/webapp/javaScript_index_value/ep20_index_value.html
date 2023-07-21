@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		function viewInfoAll() {
+			let obj = document.querySelectorAll(".food");
+			
+			
+			//체크박스 개수
+			let objLength = obj.length;
+			console.log("체크박스 개수:" + objLength);
+			
+			//체크박스 정보
+			for(let i=0; i<objLength; i++){
+				let value = obj[i].value;
+				console.log("index=" + i+ "| value=" + value)
+			}
+		}
+		
+		
+		
+
+		function viewInfo() {
+			let obj = document.querySelectorAll(".food");
+			let objLength = obj.length;
+			for(let i=0; i<objLength; i++){
+				let value = obj[i].value;
+				let cheched = obj[i].checked;
+				if(cheched==true){
+				console.log("index=" + i+ "| value=" + value)
+			}
+			}
+			
+		}
+
+	</script>
+</head>
+
+<body>
+	좋아하는 음식은?<br> <br>
+	<input type="checkbox" name="food" value="1" class="food" id="food01">라면<br>
+	<input type="checkbox" name="food" value="2" class="food" id="food02">김밥<br>
+	<input type="checkbox" name="food" value="3" class="food" id="food03" checked>떡볶이<br>
+	<input type="checkbox" name="food" value="4" class="food" id="food04">파스타<br>
+	<br>
+	<br>
+	<input type="button" value="InfoAll" onclick="viewInfoAll()">
+	<input type="button" value="Info" onclick="viewInfo()">
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <style>
+    body {
+      text-align: center;
+   
+    }
+    
+    table {
+		margin: 0 auto;
+	}
+	#month, #year, #day {
+		width: 50px;
+	}
+a {
+    text-decoration: none;
+    color: inherit;
+} 
+.radio-container {
+	text-align: left;
+}
+
+#birth-row {
+	text-align: left;
+}
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 200px; /* 버튼의 너비 조정 */
+        height: 40px; /* 버튼의 높이 조정 */
+        background-color: lightblue;
+        border-color: lightgrey;
+        color: black;
+    }
+
+  </style>
+</head>
+<body>
+	
+ <h1><a href="index.html">Index</a> | { 회원가입} | <a href="로그인.html">로그인</a></h1>
+ <hr>
+
+<form method="post" name="frmData" action="login_result.html">
+  <table>
+    <tr>
+      <th>아이디</th>
+      <td><input type="text" id="username" name="username"> (입력:5~20글자)</td>
+    </tr>
+    <tr>
+      <th>패스워드</th>
+      <td><input type="password" id="password" name="password" > (입력:0~20글자)</td>
+    </tr>
+    <tr>
+      <th>이름</th>
+      <td><input type="text" id="name" name="name"> (입력:0~20글자)</td>
+    </tr>
+   <tr>
+      <th>성별</th>
+      <td class="radio-container">
+        <label>
+			<input type="radio" id="gender-male" name="gender" value="male">남자
+		</label>
+		<label>
+       		<input type="radio" id="gender-female" name="gender" value="female">여자 
+        </label>
+      </td>
+    </tr>
+    <tr>
+            <td style="font-weight: bold;"><label for="birth">생년월일</label></td>
+            <td id="birth-row"><input type="number" id="year" name="year" value=""> 년 
+                <select id="month" name="month">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select> 월
+                <input type="number" id="day" name="day" value=""> 일</td>
+        </tr>
+	</table>
+    <input type="submit" value="등록">
+    <input type="reset" value="취소">
+</form>
+</body>
+</html>

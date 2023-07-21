@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*
+		# 미션
+			- 전체 메뉴 목록 출력
+			- 4000 이상 메뉴 목록 출력
+		*/
+		
+		let menuList = [
+			{
+				name: "아메리카노",
+				price: 3000
+			},
+			{
+				name: "아이스아메리카노",
+				price: 3000
+			},
+			{
+				name: "카페라떼",
+				price: 3500
+			},
+			{
+				name: "카페모카",
+				price: 4000
+			},
+			{
+				name: "콜드브루",
+				price: 4500
+			},
+		];
+	
+		//자바
+		// Array / List
+		//자바스크립트에서
+		// Array
+		
+		/*ArrayList<T> listMap = new ArrayList<T>(); 
+		ArrayList<String> listMap = new ArrayList<String>(); 
+		ArrayList<Integer> listMap = new ArrayList<Integer>(); 
+		ArrayList<Cart> listMap = new ArrayList<Cart>();
+		ArrayList<Map<String,String>>> listMap = new ArrayList<>();	
+		
+		Map<String,String> map = {"key1":"value1"
+								, "key2": "value2"};*/
+		
+		let orderList = [];	// 주문. 빈 배열   ;// length unlimited
+		
+		console.log("===== menuList =====");
+		let menuLength = menuList.length;
+		console.log("메뉴수=" + menuLength);
+				
+		for (let i = 0; i < menuLength; i++) {			
+			console.log("name=" + menuList[i].name + " | price=" + menuList[i].price);
+			
+			if (menuList[i].price >= 4000) {
+				
+				orderList.push(menuList[i]);
+			}
+		}
+		
+		console.log("\n===== orderList =====");
+		let orderLength = orderList.length;
+		// int orderLength = orderList.size();
+		console.log("메뉴수=" + orderLength);
+		for (let i = 0; i < orderLength; i++) {
+			console.log("name=" + orderList[i].name + " | price=" + orderList[i].price);
+		}
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

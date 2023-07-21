@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$("#btn01").click(function () {
+				$("#img01").animate({
+					height: "+=20px",
+					width: "+=20px"
+				});
+			});
+
+			$("#btn02").click(function () {
+				$("#img01").animate({
+					height: "-=20px",
+					width: "-=20px"
+				});
+				
+			});
+
+		}); 
+	</script>
+</head>
+
+<body>
+	<input type="button" id="btn01" value="밥 먹자">
+	<input type="button" id="btn02" value="운동하자">
+	<br>
+	<br>
+	<img src="cat_256.png" id="img01" width="100px">
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자격증 페이지 인트로</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .intro-container {
+      padding: 50px;
+    }
+
+    .intro-image {
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .intro-text {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .login-button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-container">
+    <h1>자격증 페이지에 오신 것을 환영합니다!</h1>
+    <img class="intro-image" src="intro_image.jpg" alt="자격증 페이지 인트로 이미지">
+    <p class="intro-text">자격증을 취득하고 싶으신가요? 자격증 페이지에서 여러분이 필요로 하는 자격증 정보와 준비 방법을 확인하세요.</p>
+    <button class="login-button" onclick="redirectToLogin()">로그인</button>
+  </div>
+
+  <script>
+    function redirectToLogin() {
+      // 로그인 페이지로 리다이렉트하는 함수를 작성합니다.
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

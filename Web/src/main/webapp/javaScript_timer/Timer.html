@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<form>
+		<input type="start" name="start" id="start" value="0" />
+	</form>
+	<script>
+        let timerRunning = false;
+		let timerValue = 0;
+		let timerInterval;
+
+		function startTimer() {
+			if (timerRunning) {
+				alert("타이머가 작동중입니다.");
+			} else {
+				timerRunning = true;
+				timerInterval = setInterval(work, 1000);
+			}
+		}
+
+		function work() {
+			timerValue++;
+
+			//console.log(timerValue);
+			document.getElementById("start").value = timerValue;
+
+			if (timerValue === 10) {
+				stopTimer();
+			}
+		}
+
+		function stopTimer() {
+			clearInterval(timerInterval);
+		}
+
+
+
+		function resetTimer() {
+			clearInterval(timerInterval);
+			timerValue = 0;
+			document.getElementById("start").value = 0;
+		}
+
+
+	</script>
+</head>
+
+<body>
+	<input type="button" value="시작" onclick="startTimer()">
+	<input type="button" value="정지" onclick="stopTimer()">
+	<input type="button" value="초기화" onclick="resetTimer()">
+</body>
+
+</html>

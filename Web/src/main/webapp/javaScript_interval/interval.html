@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	
+	let timer;
+	function startTimer(){
+		 timer = setInterval(work, 2000);
+	}
+	
+	function work(){
+		console.log("Wow");
+	}
+	
+	function stopTimer(){
+		clearInterval(timer);
+	}
+</script>
+</head>
+<body>
+ <input type="button" value="시작" onclick="startTimer()">
+  <input type="button" value="종료" onclick="stopTimer()">
+</body>
+</html>

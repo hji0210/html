@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form>
+<input type="text" id="text-input">
+<input type="text" id="text-output">
+<br>
+</br>
+<form>
+<input type="button" onclick="printUpper()" value="대문자">
+<input type="button" onclick="printLower()" value="소문자">
+
+<input type="reset" value="초기화"></input>
+</form>
+
+
+</body>
+<script>
+function printUpper(){
+	 let val = document.getElementById("text-input").value;
+	 let answer = val.toUpperCase();
+	 document.getElementById("text-output").value = answer;
+}
+
+function printLower(){
+	let val = document.getElementById("text-input").value;
+	let answer = val.toLowerCase();
+	document.getElementById("text-output").value=answer;
+}
+
+
+
+
+</script>
+</html>

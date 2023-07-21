@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+	
+	let people = [
+		{name: "김봄", juminBunho: "900101-1234567"},
+		{name: "김겨울", juminBunho: "9001231-6789123"},
+		{name: "김가을", juminBunho: "000101-2345678"},
+		{name: "김겨울", juminBunho: "011231-8912345"}
+	];
+	//변수는 나중에 생각하는거에여 > 신이아닌이상 먼저정의하는게 말이안됨
+	let jumin = [];
+	let gukjuk = '';
+	let gender = '';
+	
+	for(let i=0; i<people.length; i++) {
+		jumin = people[i].juminBunho.split("-");
+		gukjuk = (jumin[1][0] <= 4) ? '한국인' : '외국인';
+		gender = (jumin[1][0] % 2 == 0) ? '여자' : '남자';
+		console.log("name="+people[i].name + " | " + "juminbunho=" + people[i].juminBunho + " " + gukjuk + " " + gender);
+	}
+	
+	
+	
+</script>
+</html>

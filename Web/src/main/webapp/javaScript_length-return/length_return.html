@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function work() {
+var obj = document.querySelector("#myId");
+var data = obj.value;//입력한 값
+var dataLength = data.length;//입력한 값의 길이
+
+if(dataLength > 5){
+	alert("5글자 이하로 입력하세요.");
+	return false;
+	}
+	}
+</script>
+</head>
+<body>
+	<form action="success.html">
+		<input type="text" id="myId" size="10" maxlength="10" required>
+		<br>
+		<input type="submit" value=" 등록" onclick="javascript:return work()">
+	</form>
+</body>
+</html>

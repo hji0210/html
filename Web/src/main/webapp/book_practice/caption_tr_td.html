@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML</title>
+<style>
+table {
+	width: 100%;
+    border: 1px solid #444444;
+    /* border-collapse: collapse; */
+}
+th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+	<table>
+		<caption>여행 일정표</caption>
+		<colgroup>
+		<col>
+		<col style="background-color: yellow" ;  >
+		<col style="background-color: lightpink" ;  >
+		<col style="background-color: skyblue" ;  >
+		</colgroup>
+		<tr style="background-color:black;color:white">
+		<th>날짜</th>
+		<th colspan="2">장소</th>
+		<th>주요일정</th>
+		</tr>
+	<td rowspan="2">5/23(화)</td>
+			<td>스페인</td>
+			<td>바르셀로나</td>
+			<td>사그라다 파밀리아 성당</td>
+		</th>
+		<tr>
+			<td>스페인</td>
+			<td>바르셀로나</td>
+			<td>구엘 공원</td>
+		</tr>
+		<tr>
+			<td rowspan="2">5/24(수)</td>
+			<td>이탈리아</td>
+			<td>로마</td>
+			<td>콜로세움</td>
+		</tr>
+		<tr>
+			<td>이탈리아</td>
+			<td>로마</td>
+			<td>바티칸시티</td>
+		</tr>
+	</table>
+</body>
+</html>
